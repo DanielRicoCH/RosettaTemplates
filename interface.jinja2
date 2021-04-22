@@ -1,4 +1,9 @@
-interface {{ name }}
-  description {{ description }}
-  ip address {{ ip }} {{ mask }}
-  no shutdown
+interface {{ name }}.{{ vlan }}
+ mtu {{ mtu }}
+ carrier-delay up {{ up_timer }} down {{ down_timer }}
+ dampening
+ dot1q vlan {{ vlan }}
+ vrf {{ vrf }}
+ ipv4 address {{ ip }} {{ mask }}
+ description {{ description }}
+ no shutdown
